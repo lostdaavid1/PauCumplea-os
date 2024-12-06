@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Pau</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            background: url('fondogif.gif') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden; /* Desactiva el scroll */
+            height: 100vh; /* Asegura que todo se ajuste dentro de la pantalla */
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 100%;
+            margin: auto;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+            color: #ff4081;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Botón */
+        button {
+            background-color: #ff6347;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #ff4500;
+        }
+
+        /* Galería de fotos en columna */
+        .photo-gallery {
+            display: flex;
+            flex-direction: column; /* Asegura que las fotos se muestren en una columna */
+            gap: 15px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Pastel gigante */
+        .giant-cake {
+            width: 250px;
+            height: 200px;
+            background-color: #ffeb3b;
+            border-radius: 50%;
+            margin-top: 30px;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .giant-cake::after {
+            content: '🎂';
+            font-size: 140px;
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Galería de fotos en columna -->
+        <div class="photo-gallery">
+            <img src="photo1.jpg" alt="Foto 1">
+            <img src="photo2.jpg" alt="Foto 2">
+        </div>
+
+        <h1>¡Feliz Cumpleaños, Pau! 🎉</h1>
+
+        <!-- Botón para mostrar el pastel -->
+        <button id="showCake">🎂 Mostrar Pastel 🎂</button>
+
+        <!-- Pastel gigante -->
+        <div class="giant-cake" id="giantCake"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Mostrar pastel y popup
+        document.getElementById("showCake").addEventListener("click", function () {
+            Swal.fire({
+                title: '¡Feliz Cumpleaños!',
+                text: '¡Que todos tus sueños se hagan realidad! 🎂',
+                icon: 'success',
+                confirmButtonText: '¡Gracias!'
+            });
+        });
+    </script>
+</body>
+</html>
